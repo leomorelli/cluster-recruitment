@@ -1,0 +1,14 @@
+name: cluster-recruitment
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=2.0
+  - scipy>=1.11
+  - pandas>=2.2
+  - matplotlib>=3.9
+  - seaborn>=0.13
+  - pip
+  - setuptools
+  - pip:
+      - mat73

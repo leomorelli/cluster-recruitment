@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cluster-recruitment"
+version = "0.3.1"
+description = "A small pipeline for radial-profile recruitment analysis from MATLAB files"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2.0", "scipy>=1.11", "pandas>=2.2", "matplotlib>=3.9", "seaborn>=0.13", "mat73"]
+
+[project.scripts]
+cluster-recruitment = "recruitment:main"
+
+[tool.setuptools]
+py-modules = ["recruitment"]
+
