@@ -74,22 +74,6 @@ For 190 and 274 random regions it is 0.005236 and 0.003636. These numbers are
 neither measured per-cluster minima nor between-condition p-values. A
 `detected_fraction` of zero can coexist with a significant group comparison.
 
-Only the two selected channels appear as rows in `summary.csv`. If an IF_IRF-only
-command produces FISH_IRF summary rows, check the installed code before comparing
-results:
-
-```bash
-cluster-recruitment --version
-python -c "import recruitment; print(recruitment.__version__, recruitment.__file__)"
-```
-
-After extracting this updated repository, install from its directory with
-`python -m pip install -e . --no-deps --no-build-isolation` in the active conda
-environment, and use a fresh `--out results_checked`. Alternatively, invoke
-`python recruitment.py` with your usual arguments to run this source directly.
-`run.json` records the version, source location, Python executable, selected
-channels, windows, and resolved input paths. If results still differ, retain
-`comparisons.csv` and `run.json` for diagnosis.
 
 The direction of every effect is **first dataset minus second dataset**.
 Inner bins 0-4 and outer bins 30-53 are the defaults (stops are exclusive).
@@ -119,8 +103,8 @@ comparison uses within-cluster differences, and the random-channel comparison
 uses within-random-region differences. Matching row order across the two fields
 is essential. A file shared in only one part preserves pairing for that part only.
 Different files are treated as independent unless `--paired` explicitly asserts
-matching cluster AND random-region order across them. Do not use `--paired` for
-136-versus-32 unmatched clusters.
+matching cluster AND random-region order across them. Do not use `--paired` (i.e. for
+136-versus-32 unmatched clusters).
 
 These are comparisons of spatial enrichment ratios, not absolute fluorescence
 or molecule counts across channels.
